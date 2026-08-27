@@ -76,7 +76,8 @@ h1, h2, h3 { font-family: var(--font-head); color: var(--text-bright); font-weig
   display: flex; flex-direction: column; align-items: center;
   justify-content: space-between; padding: 24px 0; z-index: 9999;
 }
-.sidebar-logo { width: 40px; }
+.sidebar-logo { width: 40px; display: block; transition: opacity 0.2s; }
+.sidebar-logo:hover { opacity: 0.75; }
 .sidebar-logo img { width: 100%; height: auto; }
 .sidebar-nav { display: flex; flex-direction: column; align-items: center; gap: 24px; }
 .sidebar-nav a {
@@ -289,9 +290,9 @@ footer { background: #050505; border-top: 1px solid var(--border); padding: 48px
 
 <!-- Sidebar -->
 <aside class="sidebar" aria-label="Navigation">
-  <div class="sidebar-logo">
-    <img src="Sizeplus_logo_negative.png" alt="SIZE+ Logo" width="150" height="50" loading="eager" fetchpriority="high">
-  </div>
+  <a href="#hero" class="sidebar-logo" aria-label="Retour en haut de la page">
+    <img src="Sizeplus_logo_dots.png" alt="SIZE+" width="40" height="40" loading="eager" fetchpriority="high">
+  </a>
   <nav class="sidebar-nav">
     <a href="#hero" class="active">Overview</a>
     <a href="#methodology">Methodology</a>
