@@ -98,14 +98,25 @@ h1, h2, h3 { font-family: var(--font-head); color: var(--text-bright); font-weig
 }
 .status-text { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); text-align: center; line-height: 1.5; }
 
-.apply-btn {
+.topbar-actions {
   position: fixed; top: 20px; right: 24px; z-index: 9999;
+  display: flex; align-items: center; gap: 10px;
+}
+.apply-btn {
   background: var(--accent); color: var(--bg);
   padding: 10px 20px; font-size: 0.75rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
   border-radius: 4px; transition: background 0.2s;
 }
 .apply-btn:hover { background: #fafe95; }
+.jobs-btn {
+  background: var(--bg); color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 9px 20px; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border-radius: 4px; transition: background 0.2s, color 0.2s;
+}
+.jobs-btn:hover { background: var(--accent); color: var(--bg); }
 
 /* Main content padding matches sidebar */
 .main { position: relative; z-index: 10; padding-left: 64px; }
@@ -277,7 +288,8 @@ footer { background: #050505; border-top: 1px solid var(--border); padding: 48px
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 480px) {
-  .apply-btn { padding: 8px 14px; font-size: 0.75rem; top: 12px; right: 12px; }
+  .topbar-actions { top: 12px; right: 12px; gap: 6px; }
+  .apply-btn, .jobs-btn { padding: 8px 12px; font-size: 0.7rem; }
   .hero-stats { grid-template-columns: 1fr; }
   .platform-meta { flex-wrap: wrap; gap: 8px; }
 }
@@ -285,8 +297,11 @@ footer { background: #050505; border-top: 1px solid var(--border); padding: 48px
 </head>
 <body>
 
-<!-- Apply Button -->
-<a href="https://candidature.size-plus.be/" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply</a>
+<!-- Top bar actions -->
+<div class="topbar-actions">
+  <a href="/yourjob/en" class="jobs-btn">Jobs</a>
+  <a href="https://candidature.size-plus.be/" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply</a>
+</div>
 
 <!-- Sidebar -->
 <aside class="sidebar" aria-label="Navigation">
@@ -298,7 +313,7 @@ footer { background: #050505; border-top: 1px solid var(--border); padding: 48px
     <a href="#methodology">Methodology</a>
     <a href="#engine">The Engine</a>
     <a href="#platforms">Projects</a>
-    <a href="/yourjob">Your Job</a>
+    <a href="/yourjob/en">Your Job</a>
     <a href="#network">Network</a>
   </nav>
   <div class="sidebar-status">
@@ -493,7 +508,7 @@ footer { background: #050505; border-top: 1px solid var(--border); padding: 48px
         <ul class="footer-links">
           <li><a href="#platforms">Platforms</a></li>
           <li><a href="#network">Network</a></li>
-          <li><a href="/yourjob">Your Job</a></li>
+          <li><a href="/yourjob/en">Your Job</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
